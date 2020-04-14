@@ -15,7 +15,7 @@ console.log('current state: ', store.getState());
 const rootElement = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
-        <App />, rootElement);
-</Provider>,
+        <App />
+    </Provider>,
     rootElement
 );

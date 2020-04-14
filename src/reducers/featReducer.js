@@ -47,16 +47,21 @@ export const featReducer = (state = initialState, action) => {
                 car: {
                     ...state.car,
                     features: [
-                        ...state.car.features,
-                        {
-                            //set payloads for each piece of data
-                            id: action.payload.id,
-                            name: action.payload.name,
-                            price: action.payload.price
-                        }
+                        //...state.car.features,
+                        ...state.additionalFeatures.filter(item => item !== action.payload)
                     ]
-                };
-                default:
+                },
+                additionalFeatures: [
+                    ...state.additionalFeatures,
+                    {
+                        //set payloads for each piece of data
+                        id: action.payload.id,
+                        name: action.payload.name,
+                        price: action.payload.price
+                    }
+                ]
+            };
+        default:
             return state;
-            }
-    };
+    }
+};
