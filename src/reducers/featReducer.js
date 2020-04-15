@@ -36,7 +36,7 @@ export const featReducer = (state = initialState, action) => {
                     ]
                 },
                 additionalFeatures: [
-                    ...state.additionalFeatures.filter(item => item !== action.payload)
+                    ...state.additionalFeatures.filter(items => items !== action.payload)
                 ]
             };
         case "REMOVE_FEATURE":
@@ -48,7 +48,7 @@ export const featReducer = (state = initialState, action) => {
                     ...state.car,
                     features: [
                         //...state.car.features,
-                        ...state.additionalFeatures.filter(item => item !== action.payload)
+                        ...state.car.features.filter(item => item !== action.payload)
                     ]
                 },
                 additionalFeatures: [

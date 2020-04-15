@@ -10,7 +10,7 @@ import './styles.scss';
 
 
 const store = createStore(featReducer);
-console.log('current state: ', store.getState());
+// console.log('current state: ', store.getState());
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
